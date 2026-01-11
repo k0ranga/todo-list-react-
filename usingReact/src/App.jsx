@@ -2,33 +2,23 @@ import { useState } from 'react'
 import Hello from './helloComp'
 // import Child from './callBack'
 import PromiseMe from './promise'
-
+import TodoApp from "./components/TodoApp";
 import './App.css'
 
-function Here(){
-  let count =0;
-  return(
-    <>
-      <button onClick={ ()=> count++}>
-        {count}
-      </button>
-    </>
-  )
-}
+import {Container, Typography} from "@mui/material";
+
 
 function App() {
   const [count, setCount] = useState(0);
 
 
   return (
-    <>
-     <div>
-       <p>Counter first</p>
-       <button onClick={() => {setCount(count+1)}}></button>
-       <p>count: {count}</p>
-     </div>
-      <Here />
-    </>
+    <Container maxWidth="sm">
+      <Typography variant='h4' sx={{my : 3}}>
+          React Todo List
+      </Typography>
+      <TodoApp />
+    </Container>
   )
 }
 
